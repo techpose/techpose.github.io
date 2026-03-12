@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techpose – Full-Stack Product Engineering Partner | Web, Mobile, AI & Blockchain</title>
+  <meta name="description" content="Techpose builds scalable digital products using Web, Mobile, AI and Blockchain technologies for startups, MSMEs, and enterprises. From discovery to deployment." />
+  <meta name="keywords" content="product engineering, web app development, Flutter mobile app, AI development, blockchain development, MVP launch, startup technology partner, MERN stack" />
+  <meta property="og:title" content="Techpose – Full-Stack Product Engineering Partner" />
+  <meta property="og:description" content="From idea to scalable product. Techpose engineers digital products for funded startups and enterprises." />
+  <meta property="og:type" content="website" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='14' fill='%230d0d1a'/%3E%3Ccircle cx='12' cy='32' r='5' fill='%238B5CF6'/%3E%3Ccircle cx='28' cy='14' r='8' fill='%236B3FD4'/%3E%3Ccircle cx='28' cy='50' r='5' fill='%238B5CF6' opacity='.5'/%3E%3Ccircle cx='50' cy='32' r='11' fill='%235B2FBF'/%3E%3Ccircle cx='50' cy='32' r='17' stroke='%236B3FD4' stroke-width='1' opacity='.18'/%3E%3Cline x1='16.5' y1='29' x2='22.5' y2='20' stroke='%236B3FD4' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16.5' y1='35' x2='23.5' y2='46' stroke='%236B3FD4' stroke-width='1.2' stroke-linecap='round' opacity='.55'/%3E%3Cline x1='34' y1='16' x2='42' y2='24' stroke='%236B3FD4' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='33' y1='49' x2='42' y2='40' stroke='%236B3FD4' stroke-width='1.2' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='14' fill='%230d0d1a'/%3E%3Ccircle cx='12' cy='32' r='5' fill='%238B5CF6'/%3E%3Ccircle cx='28' cy='14' r='8' fill='%236B3FD4'/%3E%3Ccircle cx='28' cy='50' r='5' fill='%238B5CF6' opacity='.5'/%3E%3Ccircle cx='50' cy='32' r='11' fill='%235B2FBF'/%3E%3Cline x1='16.5' y1='29' x2='22.5' y2='20' stroke='%236B3FD4' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16.5' y1='35' x2='23.5' y2='46' stroke='%236B3FD4' stroke-width='1.2' stroke-linecap='round' opacity='.55'/%3E%3Cline x1='34' y1='16' x2='42' y2='24' stroke='%236B3FD4' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='33' y1='49' x2='42' y2='40' stroke='%236B3FD4' stroke-width='1.2' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' rx='100' fill='%235B2FBF'/%3E%3Ccircle cx='80' cy='256' r='40' fill='rgba(255,255,255,.85)'/%3E%3Ccircle cx='210' cy='90' r='64' fill='white'/%3E%3Ccircle cx='210' cy='422' r='36' fill='rgba(255,255,255,.55)'/%3E%3Ccircle cx='390' cy='256' r='88' fill='rgba(255,255,255,.95)'/%3E%3Ccircle cx='390' cy='256' r='130' stroke='rgba(255,255,255,.12)' stroke-width='2'/%3E%3Cline x1='117' y1='236' x2='165' y2='152' stroke='rgba(255,255,255,.6)' stroke-width='10' stroke-linecap='round'/%3E%3Cline x1='117' y1='276' x2='175' y2='368' stroke='rgba(255,255,255,.4)' stroke-width='8' stroke-linecap='round'/%3E%3Cline x1='264' y1='106' x2='322' y2='175' stroke='rgba(255,255,255,.6)' stroke-width='10' stroke-linecap='round'/%3E%3Cline x1='258' y1='410' x2='322' y2='330' stroke='rgba(255,255,255,.4)' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#5B2FBF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080810;
+      --bg2: #0d0d1a;
+      --bg3: #111127;
+      --purple: #6B3FD4;
+      --purple-light: #8B5CF6;
+      --purple-dim: #3b2270;
+      --cyan: #00E5FF;
+      --cyan-dim: rgba(0,229,255,0.15);
+      --green: #00FFA3;
+      --text: #E8E8F0;
+      --text-muted: #ffffff;
+      --border: rgba(107,63,212,0.25);
+      --border-glow: rgba(107,63,212,0.5);
+      --card: rgba(255,255,255,0.03);
+      --card-hover: rgba(107,63,212,0.08);
+      --radius: 16px;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE ─────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── SCROLLBAR ─────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--purple-dim); border-radius: 3px; }
+
+    /* ── NAV ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 5%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8,8,16,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span em {
+      color: var(--purple-light);
+      font-style: normal;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--purple);
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--purple-light);
+      box-shadow: 0 0 20px rgba(107,63,212,0.5);
+    }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+
+    /* ── SECTIONS ──────────────────────────────────────── */
+    section { position: relative; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+    .section-pad { padding: 100px 0; }
+
+    /* ── HERO ──────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(107,63,212,0.2) 0%, transparent 70%);
+      top: 50%;
+      right: -150px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      bottom: 100px;
+      left: -100px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(107,63,212,0.15);
+      border: 1px solid var(--border-glow);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--purple-light);
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-title .accent { color: var(--purple-light); }
+    .hero-title .accent2 { color: var(--cyan); }
+    .hero-sub {
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 520px;
+      font-weight: 400;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--purple);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover {
+      background: var(--purple-light);
+      box-shadow: 0 0 30px rgba(107,63,212,0.5);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover {
+      border-color: var(--purple-light);
+      color: var(--purple-light);
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-orbit {
+      position: relative;
+      width: 420px;
+      height: 420px;
+    }
+    .orbit-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 90px; height: 90px;
+      background: var(--bg3);
+      border: 2px solid var(--border-glow);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.7rem;
+      color: var(--purple-light);
+      letter-spacing: 0.05em;
+      z-index: 2;
+      box-shadow: 0 0 40px rgba(107,63,212,0.3);
+    }
+    .orbit-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      border: 1px dashed rgba(107,63,212,0.2);
+      border-radius: 50%;
+    }
+    .orbit-ring:nth-child(1) { width: 180px; height: 180px; animation: spin 12s linear infinite; }
+    .orbit-ring:nth-child(2) { width: 290px; height: 290px; animation: spin 20s linear infinite reverse; }
+    .orbit-ring:nth-child(3) { width: 400px; height: 400px; animation: spin 30s linear infinite; }
+    @keyframes spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+    .orbit-node {
+      position: absolute;
+      width: 52px; height: 52px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      transition: all 0.3s;
+      cursor: default;
+    }
+    .orbit-node:hover { border-color: var(--purple-light); box-shadow: 0 0 20px rgba(107,63,212,0.4); }
+    /* 8 nodes around orbit rings */
+    .node1  { top: calc(50% - 90px - 26px); left: calc(50% - 26px); }
+    .node2  { top: calc(50% + 90px - 26px); left: calc(50% - 26px); }
+    .node3  { top: calc(50% - 26px); left: calc(50% - 90px - 26px); }
+    .node4  { top: calc(50% - 26px); left: calc(50% + 90px - 26px); }
+    .node5  { top: calc(50% - 145px - 26px); left: calc(50% - 26px); }
+    .node6  { top: calc(50% + 145px - 26px); left: calc(50% - 26px); }
+    .node7  { top: calc(50% - 26px); left: calc(50% - 145px - 26px); }
+    .node8  { top: calc(50% - 26px); left: calc(50% + 145px - 26px); }
+
+    /* ── TRUST STRIP ───────────────────────────────────── */
+    #trust {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 50px 0;
+      background: var(--bg2);
+    }
+    .trust-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+    }
+    .trust-text {
+      font-size: 1.06rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .trust-stats {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--purple-light); }
+    .stat-label { font-size: 1.0rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── SECTION HEADERS ───────────────────────────────── */
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 28px; height: 2px;
+      background: var(--purple-light);
+      border-radius: 1px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1.35rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      font-weight: 400;
+      line-height: 1.75;
+    }
+    .section-header { margin-bottom: 60px; }
+
+    /* ── SERVICES ──────────────────────────────────────── */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--bg2);
+      padding: 40px;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--cyan));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover { background: var(--card-hover); }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: rgba(107,63,212,0.12);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.0rem;
+      margin-bottom: 20px;
+    }
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background: rgba(107,63,212,0.1);
+      border: 1px solid rgba(107,63,212,0.2);
+      color: var(--purple-light);
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── PROCESS ───────────────────────────────────────── */
+    #process { background: var(--bg2); }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--purple) 0%, var(--cyan) 100%);
+      opacity: 0.3;
+    }
+    .process-step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: all 0.3s;
+    }
+    .process-step:last-child { border-bottom: none; }
+    .process-step:hover .step-content { transform: translateX(4px); }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--purple-light);
+      flex-shrink: 0;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .process-step:hover .step-num {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(107,63,212,0.5);
+    }
+    .step-content { padding-top: 14px; transition: transform 0.3s; }
+    .step-label { font-size: 0.75rem; color: var(--cyan); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .step-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .step-desc { color: var(--text-muted); font-size: 1.2rem; line-height: 1.7; font-weight: 400; }
+    .step-activities { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .activity-pill {
+      background: rgba(0,229,255,0.06);
+      border: 1px solid rgba(0,229,255,0.15);
+      color: rgba(0,229,255,0.7);
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── INDUSTRIES ────────────────────────────────────── */
+    #industries { background: var(--bg); }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .industry-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: default;
+    }
+    .industry-card:hover {
+      border-color: var(--purple-light);
+      background: var(--card-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .ind-icon { font-size: 1.25rem; margin-bottom: 10px; }
+    .ind-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
+
+    /* ── CASE STUDIES ──────────────────────────────────── */
+    #work { background: var(--bg2); }
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .case-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--cyan));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .case-card:hover::after { opacity: 1; }
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      border-color: var(--purple-dim);
+    }
+    .case-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(0,229,255,0.07);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 100px;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+    .case-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .case-problem-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; margin-top: 18px; }
+    .case-text { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; font-weight: 400; }
+    .case-impact {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .impact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 1.06rem;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+    .impact-item::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .case-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 16px; }
+
+    /* Featured / Gullakaari card */
+    .case-card--featured {
+      border-color: rgba(255,200,60,0.3);
+      background: linear-gradient(145deg, rgba(255,180,0,0.04) 0%, var(--bg3) 60%);
+      position: relative;
+    }
+    .case-card--featured:hover {
+      border-color: rgba(255,200,60,0.6);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,180,0,0.06);
+    }
+    .case-card--featured::after {
+      background: linear-gradient(90deg, #FFB800, #FF6B00);
+    }
+    .case-card-featured-label {
+      position: absolute;
+      top: -1px; right: 20px;
+      background: linear-gradient(90deg, #FFB800, #FF8C00);
+      color: #000;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 0 0 10px 10px;
+    }
+    .case-badge--gold {
+      background: rgba(255,180,0,0.1);
+      border-color: rgba(255,180,0,0.3);
+      color: #FFB800;
+    }
+    .case-title-link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .case-title-link:hover { color: var(--cyan); }
+    .case-visit-btn {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 20px;
+      background: rgba(255,180,0,0.1);
+      border: 1px solid rgba(255,180,0,0.3);
+      color: #FFB800;
+      font-size: 1.06rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .case-visit-btn:hover {
+      background: rgba(255,180,0,0.18);
+      border-color: rgba(255,180,0,0.6);
+      transform: translateX(3px);
+    }
+
+    /* ── MVP PROGRAM ───────────────────────────────────── */
+    #mvp {
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .mvp-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .mvp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .mvp-content {}
+    .mvp-phases {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mvp-phase {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .phase-week {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      padding-top: 3px;
+      min-width: 80px;
+    }
+    .phase-name { font-weight: 500; font-size: 1.2rem; margin-bottom: 3px; }
+    .phase-desc { font-size: 1.2rem; color: var(--text-muted); font-weight: 400; }
+
+    /* ── ARCHITECTURE ──────────────────────────────────── */
+    #architecture { background: var(--bg2); }
+    .arch-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .arch-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    .arch-card:hover { border-color: var(--purple-light); transform: translateY(-3px); }
+    .arch-icon { font-size: 1.13rem; margin-bottom: 14px; }
+    .arch-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .arch-desc { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; font-weight: 400; }
+
+    /* ── WHY TECHPOSE ──────────────────────────────────── */
+    #why { background: var(--bg); }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .why-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      transition: all 0.3s;
+    }
+    .why-card:hover { background: var(--card-hover); border-color: var(--purple-dim); }
+    .why-icon {
+      width: 48px; height: 48px;
+      background: rgba(107,63,212,0.12);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .why-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .why-desc { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; font-weight: 400; }
+
+    /* ── TECH STACK ────────────────────────────────────── */
+    #stack { background: var(--bg2); }
+    .stack-categories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .stack-cat { background: var(--bg3); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .stack-cat-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .stack-items { display: flex; flex-direction: column; gap: 10px; }
+    .stack-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      color: var(--text);
+      font-weight: 400;
+    }
+    .stack-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-purple { background: var(--purple-light); }
+    .dot-cyan { background: var(--cyan); }
+    .dot-green { background: var(--green); }
+
+    /* ── TESTIMONIALS ──────────────────────────────────── */
+    #testimonials { background: var(--bg); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .testi-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+    }
+    .testi-quote {
+      font-size: 2.5rem;
+      color: var(--purple-dim);
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .testi-text {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .testi-author { font-weight: 600; font-size: 1.1rem; }
+    .testi-role { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ── INNOVATION LAB ────────────────────────────────── */
+    #lab {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      border-top: 1px solid var(--border);
+    }
+    .lab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .lab-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex; gap: 20px; align-items: flex-start;
+      transition: all 0.3s;
+    }
+    .lab-card:hover { border-color: var(--purple-dim); transform: translateX(4px); }
+    .lab-icon-box {
+      width: 48px; height: 48px;
+      background: rgba(107,63,212,0.12);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .lab-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+    .lab-desc { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; font-weight: 400; }
+
+    /* ── CTA BANNER ────────────────────────────────────── */
+    #cta-banner {
+      background: var(--bg3);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-inner {
+      text-align: center;
+      padding: 90px 0;
+    }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .cta-sub {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── CONTACT ───────────────────────────────────────── */
+    #contact { background: var(--bg); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info {}
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: rgba(107,63,212,0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+    .contact-val { font-size: 1.2rem; font-weight: 500; }
+    /* ── CONTACT CTA CARDS ─────────────────────────────── */
+    .contact-ctas { display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+    .cta-channel-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 28px 32px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-channel-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .cta-whatsapp { background: rgba(37,211,102,0.05); border-color: rgba(37,211,102,0.25); }
+    .cta-whatsapp::before { background: rgba(37,211,102,0.06); }
+    .cta-whatsapp:hover { border-color: rgba(37,211,102,0.55); transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .cta-whatsapp:hover::before { opacity: 1; }
+    .cta-email { background: rgba(107,63,212,0.06); border-color: var(--border); }
+    .cta-email::before { background: rgba(107,63,212,0.08); }
+    .cta-email:hover { border-color: var(--purple-light); transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .cta-email:hover::before { opacity: 1; }
+    .cta-channel-icon { width: 56px; height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: rgba(255,255,255,0.05); position: relative; z-index: 1; }
+    .cta-channel-body { flex: 1; position: relative; z-index: 1; }
+    .cta-channel-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .cta-channel-value { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .cta-channel-hint { font-size: 1.06rem; color: var(--text-muted); font-weight: 400; }
+    .cta-channel-arrow { font-size: 1.3rem; color: var(--text-muted); position: relative; z-index: 1; transition: transform 0.2s, color 0.2s; }
+    .cta-whatsapp:hover .cta-channel-arrow { transform: translateX(4px); color: #25D366; }
+    .cta-email:hover .cta-channel-arrow { transform: translateX(4px); color: var(--purple-light); }
+    .contact-availability {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      background: rgba(0,255,163,0.04);
+      border: 1px solid rgba(0,255,163,0.15);
+      border-radius: 12px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .avail-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+
+    /* ── FOOTER ────────────────────────────────────────── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      text-decoration: none;
+    }
+    .footer-logo span { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--text); }
+    .footer-tagline { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; max-width: 260px; font-weight: 400; }
+    .footer-col-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 1.1rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.0rem;
+      color: var(--text-muted);
+    }
+    .footer-bottom a { color: var(--purple-light); text-decoration: none; }
+
+    /* ── DIVIDER ───────────────────────────────────────── */
+    .divider-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--purple-dim) 50%, transparent 100%);
+    }
+
+    /* ── FADE IN ANIMATION ─────────────────────────────── */
+    .fade-up {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr; }
+      /* case-grid already 2-col at base */
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stack-categories { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .mvp-grid { grid-template-columns: 1fr; gap: 40px; }
+      .arch-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .lab-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .case-grid { grid-template-columns: 1fr; }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-stats { gap: 30px; }
+      .stack-categories { grid-template-columns: 1fr; }
+      .hero-orbit { width: 300px; height: 300px; }
+    }
+
+    /* ── MOBILE MENU ───────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(8,8,16,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 5%;
+      z-index: 999;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.25rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .mobile-menu a.btn-primary { color: #fff; text-align: center; border-bottom: none; padding: 12px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg width="174" height="38" viewBox="0 0 260 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10"  cy="28" r="5"   fill="#8B5CF6"/>
+      <circle cx="27"  cy="11" r="7.5" fill="#6B3FD4"/>
+      <circle cx="27"  cy="45" r="4.5" fill="#8B5CF6" opacity="0.55"/>
+      <circle cx="46"  cy="28" r="10"  fill="#5B2FBF"/>
+      <line x1="14.5" y1="25" x2="22"  y2="16" stroke="#6B3FD4" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="14.5" y1="31" x2="23"  y2="41" stroke="#6B3FD4" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+      <line x1="32.5" y1="14" x2="39"  y2="21" stroke="#6B3FD4" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="31.5" y1="44" x2="39"  y2="35" stroke="#6B3FD4" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+      <circle cx="46" cy="28" r="15" stroke="#6B3FD4" stroke-width="1" opacity="0.18"/>
+      <text x="72" y="35" font-family="'Syne',sans-serif" font-weight="800" font-size="24" fill="#E8E8F0" letter-spacing="-0.6">Tech<tspan fill="#8B5CF6">pose</tspan></text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#mvp">MVP Program</a></li>
+    <li><a href="#stack">Tech Stack</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/918329179709?text=Hi%20Techpose%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="nav-cta">Book a Call</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#work" onclick="toggleMenu()">Work</a>
+  <a href="#mvp" onclick="toggleMenu()">MVP Program</a>
+  <a href="#stack" onclick="toggleMenu()">Tech Stack</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#contact" class="btn-primary" onclick="toggleMenu()">Book a Discovery Call</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left fade-up">
+        <div class="hero-badge">Full-Stack Product Engineering Partner</div>
+        <h1 class="hero-title">
+          Build <span class="accent">Scalable</span><br/>
+          Digital Products<br/>
+          <span class="accent2">Fast</span>
+        </h1>
+        <p class="hero-sub">
+          Techpose helps <strong>startups, MSMEs, and enterprises</strong> transform ideas into scalable technology products using <strong>Web, Mobile, AI, and Blockchain</strong>. From problem discovery to deployment and maintenance.
+        </p>
+        <div class="hero-btns">
+          <a href="https://wa.me/918329179709?text=Hi%20Techpose%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="btn-primary">
+            <span>Book Discovery Call</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#work" class="btn-secondary">View Our Work</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit">
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring"></div>
+          <div class="orbit-center">TECHPOSE</div>
+          <div class="orbit-node node1" title="Web">🌐</div>
+          <div class="orbit-node node2" title="Mobile">📱</div>
+          <div class="orbit-node node3" title="AI">🤖</div>
+          <div class="orbit-node node4" title="Blockchain">⛓️</div>
+          <div class="orbit-node node5" title="Cloud">☁️</div>
+          <div class="orbit-node node6" title="Database">🗄️</div>
+          <div class="orbit-node node7" title="Security">🔐</div>
+          <div class="orbit-node node8" title="Analytics">📊</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <p class="trust-text">Trusted by founders, innovators, and organizations building meaningful technology</p>
+      <div class="trust-stats">
+        <div class="stat-item fade-up">
+          <div class="stat-num">50<span>+</span></div>
+          <div class="stat-label">Digital Products Built</div>
+        </div>
+        <div class="stat-item fade-up" style="transition-delay:0.1s">
+          <div class="stat-num">5<span>+</span></div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+        <div class="stat-item fade-up" style="transition-delay:0.2s">
+          <div class="stat-num">10<span>+</span></div>
+          <div class="stat-label">Industries</div>
+        </div>
+        <div class="stat-item fade-up" style="transition-delay:0.3s">
+          <div class="stat-num">4<span>+</span></div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">End-to-End Product<br/>Engineering</h2>
+      <p class="section-sub">We help companies design, build, and scale technology platforms from idea to launch and beyond.</p>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3 class="service-title">Web Application Development</h3>
+        <p class="service-desc">Scalable web platforms for marketplaces, dashboards, SaaS products, and enterprise tools. Built for performance, security, and growth.</p>
+        <div class="tech-tags">
+          <span class="tag">MERN Stack</span>
+          <span class="tag">NodeJS</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">React</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3 class="service-title">Mobile App Development</h3>
+        <p class="service-desc">High-performance cross-platform mobile apps for startups and enterprise users — beautiful, fast, and feature-complete.</p>
+        <div class="tech-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Payment Gateways</span>
+          <span class="tag">Push Notifications</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3 class="service-title">AI & Automation Systems</h3>
+        <p class="service-desc">AI-powered tools that automate workflows, analyse data, and unlock strategic insights. From AI agents to predictive engines.</p>
+        <div class="tech-tags">
+          <span class="tag">Python</span>
+          <span class="tag">LLM APIs</span>
+          <span class="tag">AI Agents</span>
+          <span class="tag">Vector Databases</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⛓️</div>
+        <h3 class="service-title">Blockchain Development</h3>
+        <p class="service-desc">Secure, transparent systems built on blockchain networks — from provenance tracking to decentralized marketplaces and smart contracts.</p>
+        <div class="tech-tags">
+          <span class="tag">Solidity</span>
+          <span class="tag">Ethereum</span>
+          <span class="tag">Polygon</span>
+          <span class="tag">Web3 Integrations</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">How We Build</div>
+      <h2 class="section-title">From Idea to<br/>Scalable Product</h2>
+      <p class="section-sub">A structured, battle-tested process that reduces risk and maximises speed from concept to production.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-label">Phase 1</div>
+          <h3 class="step-title">Discovery</h3>
+          <p class="step-desc">We begin by understanding the problem, market, and users before writing a single line of code.</p>
+          <div class="step-activities">
+            <span class="activity-pill">Requirement Gathering</span>
+            <span class="activity-pill">Stakeholder Interviews</span>
+            <span class="activity-pill">Product Vision Mapping</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-label">Phase 2</div>
+          <h3 class="step-title">Architecture & Design</h3>
+          <p class="step-desc">Creating scalable technical architecture and user-centred design that supports your product goals long-term.</p>
+          <div class="step-activities">
+            <span class="activity-pill">System Architecture</span>
+            <span class="activity-pill">Database Design</span>
+            <span class="activity-pill">UX/UI Design</span>
+            <span class="activity-pill">Tech Stack Selection</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-label">Phase 3</div>
+          <h3 class="step-title">Agile Development</h3>
+          <p class="step-desc">Iterative development with continuous testing, transparent sprints, and working software delivered regularly.</p>
+          <div class="step-activities">
+            <span class="activity-pill">Sprint Planning</span>
+            <span class="activity-pill">CI/CD Pipelines</span>
+            <span class="activity-pill">API Development</span>
+            <span class="activity-pill">Frontend & Backend</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-label">Phase 4</div>
+          <h3 class="step-title">Deployment</h3>
+          <p class="step-desc">Secure, monitored cloud deployment optimised for performance with zero downtime.</p>
+          <div class="step-activities">
+            <span class="activity-pill">AWS / Cloud Infrastructure</span>
+            <span class="activity-pill">Containerization</span>
+            <span class="activity-pill">Performance Optimization</span>
+          </div>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <div class="step-label">Phase 5</div>
+          <h3 class="step-title">Maintenance & Scale</h3>
+          <p class="step-desc">Ongoing support to grow your product — feature updates, performance tuning, and architecture scaling as you grow.</p>
+          <div class="step-activities">
+            <span class="activity-pill">Feature Updates</span>
+            <span class="activity-pill">Performance Tuning</span>
+            <span class="activity-pill">Bug Fixing</span>
+            <span class="activity-pill">Scaling Architecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Industries</div>
+      <h2 class="section-title">Technology Solutions<br/>Across Industries</h2>
+    </div>
+    <div class="industries-grid fade-up">
+      <div class="industry-card"><div class="ind-icon">🚀</div><div class="ind-name">SaaS Startups</div></div>
+      <div class="industry-card"><div class="ind-icon">🌐</div><div class="ind-name">Social Platforms</div></div>
+      <div class="industry-card"><div class="ind-icon">🛒</div><div class="ind-name">Marketplaces</div></div>
+      <div class="industry-card"><div class="ind-icon">🌱</div><div class="ind-name">Social Impact</div></div>
+      <div class="industry-card"><div class="ind-icon">💰</div><div class="ind-name">Fintech</div></div>
+      <div class="industry-card"><div class="ind-icon">📦</div><div class="ind-name">E-Commerce</div></div>
+      <div class="industry-card"><div class="ind-icon">👥</div><div class="ind-name">Community Platforms</div></div>
+      <div class="industry-card"><div class="ind-icon">🏢</div><div class="ind-name">Enterprise Tools</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Case Studies</div>
+      <h2 class="section-title">Products We've Built</h2>
+      <p class="section-sub">Real problems. Real solutions. Real impact — across industries and use cases.</p>
+    </div>
+    <div class="case-grid">
+
+      <div class="case-card fade-up">
+        <div class="case-badge">🙌 Volunteering</div>
+        <h3 class="case-title">Volunteering Ecosystem Platform</h3>
+        <div class="case-problem-label">Challenge</div>
+        <p class="case-text">Nonprofits struggled to coordinate volunteers efficiently, track engagement, and create ongoing motivation for participants.</p>
+        <div class="case-problem-label">Solution</div>
+        <p class="case-text">A digital volunteering platform where individuals discover tasks, contribute time, and earn reward points redeemable for social initiatives — creating a self-sustaining volunteer ecosystem.</p>
+        <div class="case-stack">
+          <span class="tag">Flutter</span>
+          <span class="tag">NodeJS</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Notification Systems</span>
+        </div>
+        <div class="case-impact">
+          <div class="impact-item">Simplified volunteer coordination at scale</div>
+          <div class="impact-item">Increased engagement through gamification</div>
+          <div class="impact-item">Digital volunteer program management for NGOs</div>
+        </div>
+      </div>
+
+      <div class="case-card fade-up" style="transition-delay:0.1s">
+        <div class="case-badge">🐾 Marketplace</div>
+        <h3 class="case-title">Pet Services Marketplace</h3>
+        <div class="case-problem-label">Challenge</div>
+        <p class="case-text">Pet owners couldn't easily discover or book trusted service providers for travel, grooming, and healthcare across multiple cities.</p>
+        <div class="case-problem-label">Solution</div>
+        <p class="case-text">A multi-city pet services marketplace connecting pet owners with verified service providers, featuring booking, ratings, vendor dashboards, and integrated payments.</p>
+        <div class="case-stack">
+          <span class="tag">Flutter</span>
+          <span class="tag">MERN Stack</span>
+          <span class="tag">Payment Gateway</span>
+        </div>
+        <div class="case-impact">
+          <div class="impact-item">Seamless booking experience for pet owners</div>
+          <div class="impact-item">Digital storefront & visibility for vendors</div>
+          <div class="impact-item">Multi-city expansion framework built-in</div>
+        </div>
+      </div>
+
+      <div class="case-card fade-up" style="transition-delay:0.2s">
+        <div class="case-badge">🐝 Environment</div>
+        <h3 class="case-title">Bee Rescue Management System</h3>
+        <div class="case-problem-label">Challenge</div>
+        <p class="case-text">Bee rescue teams across regions lacked structured systems to log rescue requests, dispatch the nearest available rescuer, and maintain historical data on hive relocations and colony health — leading to delayed responses and lost environmental records.</p>
+        <div class="case-problem-label">Solution</div>
+        <p class="case-text">Techpose built a full-stack mobile and web rescue coordination platform with role-based access for field rescuers, team leads, and administrators. The app enables real-time rescue request logging, live rescuer assignment, geo-tagged hive records, and a rich analytics dashboard tracking rescue trends, response times, and colony outcomes over time.</p>
+        <div class="case-stack">
+          <span class="tag">Flutter</span>
+          <span class="tag">NodeJS</span>
+          <span class="tag">MongoDB</span>
+        </div>
+        <div class="case-impact">
+          <div class="impact-item">Significantly faster rescuer dispatch and response time</div>
+          <div class="impact-item">Geo-tagged hive relocation records for environmental research</div>
+          <div class="impact-item">Analytics dashboard tracking colony health trends</div>
+          <div class="impact-item">Structured data supporting conservation reporting</div>
+        </div>
+      </div>
+
+      <div class="case-card case-card--featured fade-up" style="transition-delay:0.3s">
+        <div class="case-card-featured-label">🌏 World's First</div>
+        <div class="case-badge case-badge--gold">🪡 Cultural Tech</div>
+        <h3 class="case-title">
+          <a href="https://gullakaari.org" target="_blank" rel="noopener" class="case-title-link">
+            Gullakaari
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline;margin-left:6px;vertical-align:middle"><path d="M4 12L12 4M12 4H7M12 4V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </h3>
+        <div class="case-problem-label">Challenge</div>
+        <p class="case-text">India's rich tradition of handcrafted art was losing reach and relevance — artisans lacked a digital storefront, and buyers had no way to discover or customise traditional crafts at scale.</p>
+        <div class="case-problem-label">Solution</div>
+        <p class="case-text">Techpose built Gullakaari — a marketplace and e-learning platform dedicated to traditional Indian crafts, connecting artisans directly with buyers. At its core is the <strong style="color:var(--text)">AI-Artisan model</strong>: users select any Indian art form and a product type, and Gullakaari's AI generates a fully customised design which is then hand-crafted by verified Gullakaari artisans — making it the <strong style="color:var(--cyan)">world's first AI-powered customisation engine in the cultural tech space.</strong></p>
+        <div class="case-stack">
+          <span class="tag">MERN Stack</span>
+          <span class="tag">AI / LLM</span>
+          <span class="tag">Generative AI</span>
+          <span class="tag">E-commerce</span>
+        </div>
+        <div class="case-impact">
+          <div class="impact-item">World's first AI-powered craft customisation engine</div>
+          <div class="impact-item">Digital marketplace connecting artisans with global buyers</div>
+          <div class="impact-item">E-learning platform preserving traditional art knowledge</div>
+          <div class="impact-item">Artisan livelihoods supported through direct commerce</div>
+        </div>
+        <a href="https://gullakaari.org" target="_blank" rel="noopener" class="case-visit-btn">
+          Visit Gullakaari.org →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MVP PROGRAM -->
+<section id="mvp" class="section-pad">
+  <div class="mvp-glow"></div>
+  <div class="container">
+    <div class="mvp-grid">
+      <div class="mvp-content fade-up">
+        <div class="section-eyebrow">MVP Program</div>
+        <h2 class="section-title">Launch Your Product<br/>MVP in <span style="color:var(--cyan)">90 Days</span></h2>
+        <p class="section-sub" style="margin-bottom:32px">A structured program designed for founders to turn ideas into scalable digital products — fast enough for investor timelines.</p>
+        <p style="font-size:1.2rem;color:var(--text-muted);line-height:1.7;font-weight:400;margin-bottom:28px">Many startups lose momentum because early development lacks clarity. Techpose moves you from <strong style="color:var(--text)">idea → working product → user validation</strong> through a battle-tested program.</p>
+        <a href="https://wa.me/918329179709?text=Hi%20Techpose%2C%20I%27d%20like%20to%20discuss%20the%20MVP%20Launch%20Program." target="_blank" class="btn-primary">Launch Your MVP With Techpose →</a>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <div class="mvp-phases">
+          <div class="mvp-phase">
+            <div class="phase-week">Week 1–2</div>
+            <div>
+              <div class="phase-name">Product Discovery & Architecture</div>
+              <div class="phase-desc">Use case mapping, competitor analysis, feature prioritisation, system design, scalable tech stack selection</div>
+            </div>
+          </div>
+          <div class="mvp-phase">
+            <div class="phase-week">Week 3–6</div>
+            <div>
+              <div class="phase-name">UX/UI Design + Core Development</div>
+              <div class="phase-desc">User journey mapping, interface design, prototype testing, core backend systems and APIs</div>
+            </div>
+          </div>
+          <div class="mvp-phase">
+            <div class="phase-week">Week 7–10</div>
+            <div>
+              <div class="phase-name">Feature Development</div>
+              <div class="phase-desc">Full feature build-out, web or mobile app development, third-party integrations</div>
+            </div>
+          </div>
+          <div class="mvp-phase">
+            <div class="phase-week">Week 11–12</div>
+            <div>
+              <div class="phase-name">Testing & Deployment</div>
+              <div class="phase-desc">QA testing, cloud infrastructure setup, security configuration, analytics, live launch</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:28px;background:rgba(0,229,255,0.05);border:1px solid rgba(0,229,255,0.15);border-radius:14px;padding:20px 24px">
+          <div style="font-size:0.75rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:8px">Outcome</div>
+          <p style="font-size:1.2rem;color:var(--text);line-height:1.6">A working MVP with scalable architecture, ready for users and investors — delivered in 90 days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Technical Depth</div>
+      <h2 class="section-title">Engineering Architecture<br/>Built for Scale</h2>
+      <p class="section-sub">Our systems are designed to support thousands of users and complex workflows from day one — not bolted on later.</p>
+    </div>
+    <div class="arch-grid fade-up">
+      <div class="arch-card">
+        <div class="arch-icon">🔧</div>
+        <h3 class="arch-title">Microservices Architecture</h3>
+        <p class="arch-desc">Independent, modular services that scale horizontally. Each component can be deployed, updated, and scaled independently for maximum flexibility and resilience.</p>
+      </div>
+      <div class="arch-card">
+        <div class="arch-icon">🔗</div>
+        <h3 class="arch-title">API-First Development</h3>
+        <p class="arch-desc">Every system is built API-first, enabling seamless integration with external platforms, future mobile clients, and third-party services without rebuilding core logic.</p>
+      </div>
+      <div class="arch-card">
+        <div class="arch-icon">☁️</div>
+        <h3 class="arch-title">Cloud-Native Infrastructure</h3>
+        <p class="arch-desc">Secure, auto-scaling deployments on AWS with containerized environments using Docker and Kubernetes. Built for reliability, observability, and cost efficiency.</p>
+      </div>
+      <div class="arch-card">
+        <div class="arch-icon">📊</div>
+        <h3 class="arch-title">Data-Centric Systems</h3>
+        <p class="arch-desc">Optimised database design patterns that support both performance at scale and analytics reporting. The right database for the right job — relational or document-based.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATION LAB -->
+<section id="lab" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Innovation Lab</div>
+      <h2 class="section-title">Exploring the Frontier<br/>of Technology</h2>
+      <p class="section-sub">Techpose actively researches and builds with emerging technologies — keeping our clients ahead of the curve.</p>
+    </div>
+    <div class="lab-grid fade-up">
+      <div class="lab-card">
+        <div class="lab-icon-box">🤖</div>
+        <div>
+          <div class="lab-title">AI Agents & Automation</div>
+          <div class="lab-desc">Autonomous systems that analyse data, trigger actions, and automate complex workflows — reducing manual overhead and unlocking new operational leverage.</div>
+        </div>
+      </div>
+      <div class="lab-card">
+        <div class="lab-icon-box">⛓️</div>
+        <div>
+          <div class="lab-title">Blockchain Infrastructure</div>
+          <div class="lab-desc">Secure systems for digital provenance, asset verification, and transparent supply chains. Smart contracts that enforce rules without intermediaries.</div>
+        </div>
+      </div>
+      <div class="lab-card">
+        <div class="lab-icon-box">🛒</div>
+        <div>
+          <div class="lab-title">Marketplace Platforms</div>
+          <div class="lab-desc">Technology for building service marketplaces, e-commerce ecosystems, and community platforms — with booking, payments, reviews, and vendor management built in.</div>
+        </div>
+      </div>
+      <div class="lab-card">
+        <div class="lab-icon-box">📈</div>
+        <div>
+          <div class="lab-title">Data Intelligence Systems</div>
+          <div class="lab-desc">Platforms that convert raw operational data into actionable business insights — dashboards, predictive analytics, and recommendation engines.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TECHPOSE -->
+<section id="why" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Why Techpose</div>
+      <h2 class="section-title">Built by Engineers<br/>Who Understand Products</h2>
+    </div>
+    <div class="why-grid fade-up">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3 class="why-title">Problem-First Approach</h3>
+        <p class="why-desc">We understand the story and business challenge before writing a single line of code. Better requirements lead to better products — and fewer expensive revisions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📐</div>
+        <h3 class="why-title">Scalable Architecture</h3>
+        <p class="why-desc">Systems built for growth from day one. Not quick-fix code that needs to be rebuilt in 18 months — but robust foundations that scale with your business.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏗️</div>
+        <h3 class="why-title">Startup + Enterprise Experience</h3>
+        <p class="why-desc">We've built for early-stage startups that need speed, NGOs that need impact, and enterprises that need reliability. We adapt our approach to your context.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3 class="why-title">End-to-End Ownership</h3>
+        <p class="why-desc">From discovery to maintenance, Techpose remains your long-term technology partner. We don't disappear after deployment — we grow with you.</p>
+      </div>
+    </div>
+    <div style="margin-top:40px;text-align:center;padding:36px;background:var(--bg3);border:1px solid var(--border);border-radius:20px" class="fade-up">
+      <p style="font-family:var(--font-display);font-size:clamp(1.1rem,2vw,1.4rem);font-weight:700;line-height:1.5;letter-spacing:-0.02em;max-width:700px;margin:0 auto">
+        "At Techpose, we don't just build software. We <span style="color:var(--purple-light)">engineer digital products</span> that help companies <span style="color:var(--cyan)">scale faster</span> and operate smarter."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Technology</div>
+      <h2 class="section-title">Technology We Work With</h2>
+      <p class="section-sub">Production-proven, modern technologies that balance developer experience with performance and scalability.</p>
+    </div>
+    <div class="stack-categories fade-up">
+      <div class="stack-cat">
+        <div class="stack-cat-title">Frontend</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot dot-purple"></span>React</div>
+          <div class="stack-item"><span class="stack-dot dot-purple"></span>Flutter</div>
+          <div class="stack-item"><span class="stack-dot dot-purple"></span>Next.js</div>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="stack-cat-title">Backend</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot dot-cyan"></span>NodeJS</div>
+          <div class="stack-item"><span class="stack-dot dot-cyan"></span>Express</div>
+          <div class="stack-item"><span class="stack-dot dot-cyan"></span>REST APIs</div>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="stack-cat-title">Database</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot dot-green"></span>MongoDB</div>
+          <div class="stack-item"><span class="stack-dot dot-green"></span>PostgreSQL</div>
+          <div class="stack-item"><span class="stack-dot dot-green"></span>Firebase</div>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="stack-cat-title">AI & Data</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot dot-purple"></span>Python</div>
+          <div class="stack-item"><span class="stack-dot dot-purple"></span>LLM APIs</div>
+          <div class="stack-item"><span class="stack-dot dot-purple"></span>Vector Databases</div>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="stack-cat-title">Blockchain</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot dot-cyan"></span>Ethereum</div>
+          <div class="stack-item"><span class="stack-dot dot-cyan"></span>Polygon</div>
+          <div class="stack-item"><span class="stack-dot dot-cyan"></span>Solidity / Web3</div>
+        </div>
+      </div>
+      <div class="stack-cat">
+        <div class="stack-cat-title">Infrastructure</div>
+        <div class="stack-items">
+          <div class="stack-item"><span class="stack-dot dot-green"></span>AWS</div>
+          <div class="stack-item"><span class="stack-dot dot-green"></span>Docker</div>
+          <div class="stack-item"><span class="stack-dot dot-green"></span>CI/CD Pipelines</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Testimonials</div>
+      <h2 class="section-title">What Clients Say</h2>
+    </div>
+    <div class="testi-grid fade-up">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Techpose helped us translate a complex idea into a fully functional platform. Their team understood the problem deeply before building the solution — exactly what early-stage founders need.</p>
+        <div class="testi-author">Startup Founder</div>
+        <div class="testi-role">Social Impact Tech Platform</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">What impressed us most was the architecture thinking. They didn't just build features — they built a system designed to scale. We went from MVP to multi-city without rebuilding anything.</p>
+        <div class="testi-author">Product Lead</div>
+        <div class="testi-role">Services Marketplace</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Working with Techpose felt like having a CTO on-demand. They brought engineering best practices, clear communication, and genuine ownership of the product outcome.</p>
+        <div class="testi-author">NGO Director</div>
+        <div class="testi-role">Environmental Rescue Organisation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="cta-title">Let's Build<br/>Your Product</h2>
+      <p class="cta-sub">Whether you're a startup building your first product or an enterprise developing a new digital platform, Techpose can help you turn ideas into scalable technology.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/918329179709?text=Hi%20Techpose%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="btn-primary">Book Discovery Call →</a>
+        <a href="/cdn-cgi/l/email-protection#ed828b8b848e88ad99888e859d829e88c38483d29e988f87888e99d0bd9f8287888e99c8dfdda8839c98849f94" class="btn-secondary">Send Project Brief</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Start a Conversation</h2>
+      <p class="section-sub">Tell us about your product idea. Our team will respond within 24 hours with next steps.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">office@techpose.in</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-val">India · Remote Globally</div>
+          </div>
+        </div>
+        <div style="margin-top:32px;padding:24px;background:rgba(107,63,212,0.07);border:1px solid var(--border);border-radius:14px">
+          <div style="font-size:1.0rem;color:var(--purple-light);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:10px">Response Time</div>
+          <p style="font-size:1.2rem;color:var(--text-muted);line-height:1.6;font-weight:400">We respond to all inquiries within <strong style="color:var(--text)">24 hours</strong>. For urgent projects, mention your timeline in the message.</p>
+        </div>
+        <div style="margin-top:20px;padding:24px;background:rgba(0,255,163,0.04);border:1px solid rgba(0,255,163,0.12);border-radius:14px">
+          <div style="font-size:1.0rem;color:var(--green);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:10px">Currently Accepting</div>
+          <p style="font-size:1.2rem;color:var(--text-muted);line-height:1.6;font-weight:400">Web apps, mobile apps, AI integrations, blockchain projects, and full product engineering engagements.</p>
+        </div>
+      </div>
+      <div class="contact-ctas fade-up" style="transition-delay:0.15s">
+
+        <!-- WhatsApp CTA -->
+        <a href="https://wa.me/918329179709?text=Hi%20Techpose%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="cta-channel-card cta-whatsapp">
+          <div class="cta-channel-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2C8.268 2 2 8.268 2 16c0 2.456.663 4.756 1.818 6.733L2 30l7.47-1.796A13.926 13.926 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#25D366"/>
+              <path d="M22.5 19.5c-.3-.15-1.77-.873-2.044-.972-.273-.1-.472-.15-.67.15-.2.298-.77.972-.944 1.17-.174.2-.347.224-.647.075-.3-.15-1.265-.466-2.41-1.485-.89-.794-1.49-1.774-1.665-2.074-.174-.3-.018-.462.131-.61.134-.134.3-.348.449-.523.15-.174.2-.298.3-.497.1-.2.05-.373-.025-.523-.075-.15-.67-1.614-.918-2.21-.242-.58-.487-.5-.67-.51-.174-.008-.373-.01-.572-.01s-.522.075-.795.373c-.273.298-1.043 1.02-1.043 2.486s1.068 2.883 1.218 3.082c.15.2 2.102 3.207 5.09 4.497.712.307 1.268.49 1.701.627.715.227 1.366.195 1.88.118.574-.085 1.77-.723 2.019-1.421.249-.698.249-1.297.174-1.421-.075-.125-.273-.2-.572-.35z" fill="white"/>
+            </svg>
+          </div>
+          <div class="cta-channel-body">
+            <div class="cta-channel-label">Chat on WhatsApp</div>
+            <div class="cta-channel-value">+91 83291 79709</div>
+            <div class="cta-channel-hint">Typically replies within minutes</div>
+          </div>
+          <div class="cta-channel-arrow">→</div>
+        </a>
+
+        <!-- Email CTA -->
+        <a class="cta-channel-card cta-email">
+          <div class="cta-channel-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#6B3FD4"/>
+              <path d="M6 10h20v14H6z" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+              <path d="M6 10l10 9 10-9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="cta-channel-body">
+            <div class="cta-channel-label">Send an Email</div>
+            <div class="cta-channel-value"><span class="__cf_email__" data-cfemail="office@techpose.in"><span class="__cf_email__" data-cfemail="3c535a5a555f597c48595f544c534f59125552">office@techpose.in</span></span></div>
+            <div class="cta-channel-hint">We reply within 24 hours</div>
+          </div>
+          <div class="cta-channel-arrow">→</div>
+        </a>
+
+        <!-- Availability note -->
+        <div class="contact-availability">
+          <div class="avail-dot"></div>
+          <span>Currently accepting new projects — Web, Mobile, AI & Blockchain</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <svg width="160" height="36" viewBox="0 0 260 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10"  cy="28" r="5"   fill="#8B5CF6"/>
+            <circle cx="27"  cy="11" r="7.5" fill="#6B3FD4"/>
+            <circle cx="27"  cy="45" r="4.5" fill="#8B5CF6" opacity="0.55"/>
+            <circle cx="46"  cy="28" r="10"  fill="#5B2FBF"/>
+            <line x1="14.5" y1="25" x2="22"  y2="16" stroke="#6B3FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.5" y1="31" x2="23"  y2="41" stroke="#6B3FD4" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+            <line x1="32.5" y1="14" x2="39"  y2="21" stroke="#6B3FD4" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="31.5" y1="44" x2="39"  y2="35" stroke="#6B3FD4" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+            <circle cx="46" cy="28" r="15" stroke="#6B3FD4" stroke-width="1" opacity="0.18"/>
+            <text x="72" y="35" font-family="'Syne',sans-serif" font-weight="800" font-size="24" fill="#E8E8F0" letter-spacing="-0.6">Tech<tspan fill="#8B5CF6">pose</tspan></text>
+          </svg>
+        </a>
+        <p class="footer-tagline">Techpose builds scalable digital products using Web, Mobile, AI and Blockchain technologies for startups and enterprises.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Web App Development</a></li>
+          <li><a href="#services">Mobile App Development</a></li>
+          <li><a href="#services">AI & Automation</a></li>
+          <li><a href="#services">Blockchain Development</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#work">Case Studies</a></li>
+          <li><a href="#mvp">MVP Program</a></li>
+          <li><a href="#why">Why Techpose</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Technology</div>
+        <ul class="footer-links">
+          <li><a href="#stack">MERN Stack</a></li>
+          <li><a href="#stack">Flutter Apps</a></li>
+          <li><a href="#stack">AI / LLM Systems</a></li>
+          <li><a href="#stack">Blockchain / Web3</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Techpose. All rights reserved.</span>
+      <span>Built by <a href="#">Techpose Engineering</a></span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  // Scroll-triggered subtle fade-in — elements are visible by default
+  // Only add animation class if IntersectionObserver is supported
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      el.classList.add('animate');
+      observer.observe(el);
+    });
+  }
+  // If no IntersectionObserver — elements stay fully visible (no animate class added)
+
+  // Nav scroll shadow effect
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 80) {
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Smooth anchor scroll
+  document.
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
